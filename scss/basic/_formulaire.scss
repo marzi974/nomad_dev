@@ -1,0 +1,67 @@
+
+
+.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield input[type=radio] {
+  margin: 5px;
+}
+
+.gform_wrapper ul.gfield_radio li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+body .gform_wrapper ul li.field_description_below div.ginput_container_radio {
+  margin-top: 0!important;
+}
+
+
+ .gform_wrapper ul.gfield_checkbox li {
+  width: 32%;
+  display: inline-block;
+   @media (max-width :640px) {
+     width: 50%;
+   }
+   @media (max-width :400px) {
+     width: 100%;
+   }
+}
+
+.gfield_radio li label {
+  max-width: 100% !important;
+}
+
+ .gform_body {
+  width: calc(100% - 15px);
+}
+
+.gform_wrapper  {
+ padding: 50px 15px;
+}
+
+.gform_wrapper  input[type="text"] {
+  height : auto;
+  margin :0;
+}
+
+body .gform_wrapper ul li.gfield {
+  margin-top: 0!important;
+}
+
+
+.gform_wrapper .top_label .gfield_label {
+  margin-top: 10px;
+}
+ #input_1_4_6 {
+   height: 29px;
+ }
+
+.gform_wrapper ul.gfield_radio {
+  margin: 3px!important;
+}
+.gform_wrapper.gf_browser_chrome .gfield_checkbox li input, .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox] {
+  margin-top: 0;
+  vertical-align: baseline;
+}
+
+.gform_wrapper textarea.medium {
+  height: 70px!important;
+}

@@ -1,0 +1,138 @@
+body.home {
+  background: #fafafa;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body, p, h1, h2, h3, span {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.droite {
+  float:right;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  padding-bottom: 60px;
+  padding-top: 130px;
+  text-transform: uppercase;
+  @media (max-width:640px) {
+    font-size: 35px;
+    line-height: 35px;
+    padding-bottom: 30px;
+    padding-top: 140px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.gauche {
+  float:left;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.skew {
+  background-color: #fff;
+  transform: skewY(8deg);
+  z-index: -1;
+  margin-top: 150px;
+}
+
+
+.archive .skew {
+  margin-top: 0;
+  @media (max-resolution: 1024px) {
+    margin-top: 40px;
+  }
+}
+
+.unskew {
+  transform: skewY(-8deg);
+  padding-bottom: 300px;
+}
+
+.bg_rouge {
+  height: 500px;
+  background-color: darkred;
+  margin-top: -150px;
+  position: relative;
+  z-index: -2;
+}
+
+.btn  {
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  margin: 50px;
+  vertical-align: super;
+  &.blanc {
+    color: #fdba34;
+    background-color: #fff;
+    transition : all 0.3s ease;
+    &:hover {
+      background-color: #ffda47;
+      color :#fff;
+    }
+  }
+}
+
+.stamp {
+  position: absolute;
+  top:660px;
+  left :60%;
+  z-index: -5;
+  @media (max-width: 1024px) {
+   display: none;
+  }
+}
+
+.bouton {
+  background: #c4232d;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.page {
+  overflow-x: hidden;
+}
