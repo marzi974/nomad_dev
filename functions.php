@@ -248,23 +248,23 @@ register_taxonomy( "expertise-cat",
 
 
 /* ==========================================================================
-Forfait
+Réalisation
 ========================================================================== */
 
-add_action('init', 'create_forfait');
-function create_forfait()
+add_action('init', 'create_realisation');
+function create_realisation()
 {
     $labels = array(
-        'name' => _x('Forfait', 'forfait'),
-        'singular_name' => _x('Produit', 'forfait'),
-        'add_new' => 'Ajouter', 'forfait',
-        'add_new_item' => 'Ajouter un nouveau forfait',
-        'edit_item' => 'Editer le forfait',
-        'new_item' => 'Nouveau forfait',
-        'view_item' => 'Voir le forfait',
-        'search_items' => 'Chercher un forfait',
-        'not_found' =>  'Aucun forfait trouvé',
-        'not_found_in_trash' => 'Aucun forfait dans la poubelle',
+        'name' => _x('Réalisation', 'réalisation'),
+        'singular_name' => _x('Réalisation', 'réalisation'),
+        'add_new' => 'Ajouter', 'réalisation',
+        'add_new_item' => 'Ajouter une nouvelle réalisation',
+        'edit_item' => 'Editer la réalisation',
+        'new_item' => 'Nouvelle réalisation',
+        'view_item' => 'Voir la réalisation',
+        'search_items' => 'Chercher une réalisation',
+        'not_found' =>  'Aucune réalisation trouvé',
+        'not_found_in_trash' => 'Aucune réalisation dans la poubelle',
         'parent_item_colon' => ''
     );
     $args = array(
@@ -278,16 +278,16 @@ function create_forfait()
         'menu_position' => 20,
         'supports' => array('title','editor','thumbnail')
     );
-    register_post_type('forfait',$args);
+    register_post_type('realisation',$args);
 }
 
 
 
-register_taxonomy( "forfait-type",
-    array( 	"forfait" ),
+register_taxonomy( "realisation-categorie",
+    array( 	"realisation" ),
     array( 	"hierarchical" => true,
-        "labels" => array('name'=>"Type",'add_new_item'=>"Ajouter un type"),
-        "singular_label" => __( "type" )
+        "labels" => array('name'=>"Catégories",'add_new_item'=>"Ajouter une catégorie"),
+        "singular_label" => __( "Categorie" )
     )
 );
 

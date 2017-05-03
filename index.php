@@ -113,7 +113,7 @@ get_header(); ?>
                     <p>Demande de soumission</p>
                     <p>Contactez nous et vous recevrez une sousmission en 48h</p>
                 </div>
-                <a href="/soumission"><span><img src="<?php echo get_template_directory_uri();?>/img/fleche_blanche.svg" alt=""/></span></a>
+                <a href="/soumission"><span class="fleche_blanche"><img src="<?php echo get_template_directory_uri();?>/img/fleche_blanche.svg" alt=""/></span></a>
             </div>
         </div>
         </div>

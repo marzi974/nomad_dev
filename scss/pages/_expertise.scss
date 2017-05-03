@@ -1,0 +1,238 @@
+#bandeau_contact {
+  background-image: url(../img/bg_bandeau.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &:after {
+    content:"";
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: rgba(0,160,0,0.67);
+  }
+
+  div {
+    max-width: 400px;
+    margin : 0 auto;
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    position: relative;
+    .titre {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    p {
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+}
+
+#expert_content {
+  position: relative;
+  margin : 75px 0;
+  #leftHalf {
+    background-image: url(../img/maison_exp.jpg) ;
+    width: calc( 50% - 15px );
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .desc_expert {
+    padding: 30px 0 0 30px;
+  }
+}
+
+#realisation {
+
+  padding: 80px 0;
+
+  h2 {
+    padding-bottom : 30px ;
+
+  }
+
+  .container {
+    & > div:nth-of-type(1) {
+      width: 25%;
+    }
+    & > div:nth-of-type(2) {
+      width: 42%;
+      .expert_img {
+        background-position: 4px;
+        background-repeat: no-repeat;
+      }
+    }
+    & > div:nth-of-type(3) {
+      width: 16.5%;
+      .expert_img {
+        background-position: 4px;
+        background-repeat: no-repeat;
+      }
+    }
+    & > div:nth-of-type(4) {
+      width: 16.5%;
+      .expert_img {
+        background-position: 4px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+
+.realisation-item {
+  display: inline-block;
+  float :left;
+  img {
+    max-width: 100%;
+  }
+}
+
+
+  .box {
+    width: calc( 33% - 4px);
+    float: left;
+    margin-top: 4px;
+    background: #45ac35;
+    margin-left: 4px;
+  }
+
+  .box:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: 37.5%;
+  }
+  .box > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 40px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+}
+
+
+.page-template-page-contact {
+
+  .villes {
+    margin: 0;
+  }
+  .villes div {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .villes a {
+    display: block;
+    background-color: #005c45;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-size: 5rem;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  @media (max-width: 768px) {
+    .villes a {
+      font-size: 30px;
+    }
+  }
+  .villes a .arrow {
+    display: none;
+  }
+  .villes a:hover,
+  .villes a:active {
+    text-decoration: none;
+    color: white;
+  }
+  @media (min-width: 992px) {
+    .villes {
+      position: relative;
+      height: 300px;
+      margin: -20px -20px -20px;
+    }
+    .villes a {
+      height: 120px;
+      padding: 40px 0;
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+    .villes a .arrow {
+      opacity: 0;
+      display: block;
+    }
+    .villes a:hover,
+    .villes a:active {
+      height: 140px;
+    }
+    .villes a:hover .arrow,
+    .villes a:active .arrow {
+      opacity: 1;
+      color: #ffd65a;
+      padding-top: 20px;
+    }
+    .villes div {
+      position: absolute;
+      margin-bottom: 0;
+    }
+    .villes div:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .villes div:nth-child(1) a {
+      margin: 20px 10px 10px 20px;
+    }
+    .villes div:nth-child(1) a:hover {
+      margin: 0 10px 10px 0;
+    }
+    .villes div:nth-child(2) {
+      top: 0;
+      right: 0;
+    }
+    .villes div:nth-child(2) a {
+      margin: 20px 20px 10px 10px;
+    }
+    .villes div:nth-child(2) a:hover {
+      margin: 0 0 10px 10px;
+    }
+    .villes div:nth-child(3) {
+      bottom: 0;
+      left: 0;
+    }
+    .villes div:nth-child(3) a {
+      margin: 10px 10px 20px 20px;
+    }
+    .villes div:nth-child(3) a:hover {
+      margin: 10px 10px 0 0;
+    }
+    .villes div:nth-child(4) {
+      bottom: 0;
+      right: 0;
+    }
+    .villes div:nth-child(4) a {
+      margin: 10px 20px 20px 10px;
+    }
+    .villes div:nth-child(4) a:hover {
+      margin: 10px 0 0 10px;
+    }
+
+  }
+
+}

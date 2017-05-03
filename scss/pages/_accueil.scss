@@ -219,25 +219,28 @@
         font-size: 25px;
       }
     }
-    span {
-      display: inline-block;
-      width: 60px;
-      padding: 13px;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      position: absolute;
-      right: 30px;
-      bottom: 30px;
-      img {
-        transition: all 0.5s ease;
-      }
-    }
+
     &:hover {
       img {
         transform: rotate(360deg);
       }
       background-color: #4aca36;
     }
+  }
+}
+
+
+.fleche_blanche {
+  display: inline-block;
+  width: 60px;
+  padding: 13px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  img {
+    transition: all 0.5s ease;
   }
 }
 
@@ -356,3 +359,7 @@ footer {
 
 }
 
+.bg_titre {
+  background-image: url(../img/bg_titre.jpg);
+  background-size: cover;
+}

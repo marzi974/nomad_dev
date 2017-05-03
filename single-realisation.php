@@ -53,20 +53,20 @@ get_header();
 
 <section id="realisation" >
     <div class="text-center">
-        <h2>Quelques une de nos réalisations</h2>
+        <h2>Quelques une de nos expertises</h2>
     </div>
     <div class="container clearfix">
     <?php
     $args = array(
-        'post_type' => 'realisation',
+        'post_type' => 'expertise',
         'posts_per_page' => 4,
-        'order'   => 'ASC'
+        'order'   => 'DESC'
 
     );
     $loop = new WP_Query( $args );
     $i=1;
     while ( $loop->have_posts() ) : $loop->the_post();
-        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'service' );
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'full' );
         $url = $thumb['0'];
         ?>
 

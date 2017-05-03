@@ -3,13 +3,14 @@
 
 
 <footer id="footer">
+    <?php if (is_front_page()) { ?>
     <div class="main">
         <div class="container ">
         <p><?php the_field('texte_1_footer', 'option'); ?></p>
         <?php the_field('texte_2_footer', 'option'); ?>
         </div>
     </div>
-
+    <?php } ?>
     <div class="main_menu clearfix">
 
         <div class="container clearfix">

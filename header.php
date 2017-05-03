@@ -95,11 +95,13 @@
 
     <?php } else if (is_category()) { ?>
 
-    <?php } else if (is_404()) {?>
+    <?php } else  {?>
 
-    <?php }  else { ?>
-        <!--div class="container"><span class="ariane"><a  href="<?php bloginfo('url')?>/">Accueil</a><span> > </span><?php bcn_display(); ?></span></div-->
-    <?php }  ?>
+    <div class="bg_titre">
+        <h1 class="titre"><?php the_title(); ?></h1>
+    </div>
+
+    <?php } ?>
 
 
 </header>
