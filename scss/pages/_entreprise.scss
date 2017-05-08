@@ -1,0 +1,114 @@
+#nav_ent {
+  span {
+    padding: 15px 60px;
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+  }
+  a {
+    display: inline-block;
+    padding: 0 10px;
+    color :#000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}
+
+
+#etapes {
+
+  .text-center {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .flex {
+    flex-wrap: wrap;
+    padding-top: 50px;
+  }
+
+  .etape > div {
+    width: calc( 33.333% - 3px );
+
+    @media (max-width :767px) {
+      width: calc( 50% - 3px );
+      }
+    @media (max-width :640px) {
+      width: calc( 100% - 3px );
+      }
+
+    min-height: 250px;
+    overflow: hidden;
+    position: relative;
+    padding: 120px 60px;
+    background-size: cover;
+    margin: 1.5px;
+    span {
+      position: absolute;
+      top: -60px;
+      right: 20px;
+      font-size: 100px;
+      opacity: 0.9;
+      font-weight: 600;
+      color: #45ac35;
+      display: inline-block;
+    }
+    p {
+      font-size: 25px;
+      font-weight: 200;
+      position: relative;
+    }
+  }
+
+  .etape > div:nth-of-type(1), .etape > div:nth-of-type(6), .etape > div:nth-of-type(8) {
+    background-image: url(../img/option1.jpg);
+    &:before {
+      position: absolute;
+      top:30px;
+      bottom :30px;
+      left:30px;
+      right :30px;
+      content :"";
+      background-color: rgba(255,255,255,1);
+    }
+  }
+  .etape > div:nth-of-type(2) {
+    background-image: url(../img/option2.jpg);
+  }
+  .etape > div:nth-of-type(3) {
+    background-image: url(../img/option3.jpg);
+  }
+  .etape > div:nth-of-type(4) {
+    background-color: #ffffff;
+    border : 3px solid #f1f1f1;
+  }
+
+  .etape > div:nth-of-type(6) {
+    background-image: url(../img/option6.jpg);
+  }
+  .etape > div:nth-of-type(7) {
+    background-image: url(../img/option7.jpg);
+  }
+  .etape > div:nth-of-type(8) {
+    background-image: url(../img/option8.jpg);
+  }
+  .etape > div:nth-of-type(9) {
+    background-color: #45ac35;
+    color: #fff;
+    transition : all 0.3s ease;
+    p:nth-of-type(1) {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    &:hover {
+      img {
+        transform: rotate(360deg);
+      }
+      background-color: #4aca36;
+    }
+  }
+}

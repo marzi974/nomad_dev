@@ -142,10 +142,20 @@
     padding-bottom: 30px;
   }
 
+  .flex {
+    flex-wrap : wrap;
+  }
 
   .news {
-    width: 33%;
+    width: 33.3333%;
     position: relative;
+    margin-top: 10px;
+    @media (max-width: 1024px){
+    width: 50%;
+  }
+    @media (max-width: 640px){
+      width: 100%;
+    }
     span.cat {
       position: absolute;
       width: 45px;
@@ -159,7 +169,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-color: #45ac35;
-
         }
       &.conseils {
         background-image: url(../img/star.svg);
@@ -172,6 +181,7 @@
 
     img {
       padding-right: 3px;
+      width: 100%;
     }
     & > div {
       margin-right: 30px;
@@ -230,6 +240,13 @@
   }
 }
 
+
+.page-template-page-actualites #actu {
+  padding: 100px 0;
+  @media (max-width: 1230px) {
+  padding: 100px 15px;
+  }
+}
 
 .fleche_blanche {
   display: inline-block;

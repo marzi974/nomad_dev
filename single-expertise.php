@@ -6,9 +6,9 @@ get_header();
 ?>
 
 
-<section  id="expert_content">
+<section  class="section_content">
 
-    <div id="leftHalf"></div>
+    <div class="leftHalf"></div>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
 
@@ -25,7 +25,7 @@ get_header();
 
                 </div>
 
-                <div class="large-6 medium-12 columns desc_expert">
+                <div class="large-6 medium-12 columns desc_content">
 
                     <?php the_content(); ?>
 
@@ -40,16 +40,7 @@ get_header();
 
 </section>
 
-<section id="bandeau_contact">
-
-    <div>
-        <p class="titre">Demande de soumission</p>
-        <p>Contactez-nous et vous recevrez une soumission sous 48h</p>
-        <span class="fleche_blanche"><img src="<?php echo get_template_directory_uri();?>/img/fleche_blanche.svg" alt=""/></span>
-    </div>
-
-</section>
-
+<?php include "bandeau.php" ?>
 
 <section id="realisation" >
     <div class="text-center">
@@ -71,24 +62,26 @@ get_header();
         ?>
 
         <div class="realisation-item">
-            <a  href=" <?php the_permalink() ?>">
+            <!--a  href=" <?php the_permalink() ?>"-->
                 <div class="expert_img" style="background-image: url(<?=$url?>); ">
 
                     <img src="<?php echo get_template_directory_uri(); ?>/img/img_real_<?php echo $i; ?>.png" alt=""/>
 
                 </div>
-            </a>
+            <!--/a-->
         </div>
 
     <?php $i++ ;endwhile; ?>
 
         <div>
+            <a href="/realisations">
             <div class="box ">
                 <div class="content">
                     <p>Voir toutes les réalisations</p>
                 </div>
+                <div class="fleche_blanche"><img src="<?php echo get_template_directory_uri(); ?>/img/fleche_verte.svg" alt=""></div>
             </div>
-
+            </a>
         </div>
     </div>
 </section>

@@ -35,10 +35,16 @@
     color:#fff;
   }
 
+  #menu-principal > li > ul {
+    top: 63px;
+  }
+
   .main_menu {
       position: fixed;
       top:0;
       background-color: #000;
+    z-index: 10;
+
       & > .container {
         background-color: #000;
         padding: 10px 0;
@@ -93,7 +99,6 @@ header .main_menu {
 
 header {
   position: relative;
-  z-index: 1;
 }
 
 
@@ -294,7 +299,6 @@ header {
 
   .menu-principal-container {
     height: 75px;
-    background-color: #a7171c;
   }
 
   .cross .page {
