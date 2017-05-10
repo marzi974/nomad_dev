@@ -2,14 +2,14 @@
 
   position :absolute;
   right :0;
-
+  top:-5px;
 
   display: none;
   @media (min-width: 320px) and (max-width: 1024px) {
     display: block;
   }
   svg {
-    width: 75px;
+    width: 65px;
     height: 73px;
     cursor: pointer;
     -webkit-transform: translate3d(0, 0, 0);
@@ -29,9 +29,14 @@
     transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
     stroke-width: 40px;
     stroke-linecap: round;
-    stroke: #fff;
+    stroke: #000;
     stroke-dashoffset: 0px;
+
+    .stick & {
+      stroke: #fff;
+    }
   }
+
   path#top,
   path#bottom {
     stroke-dasharray: 240px 950px;
@@ -48,9 +53,11 @@
     stroke-dashoffset: -650px;
     stroke-dashoffset: -650px;
   }
+
   &.cross path#middle {
     stroke-dashoffset: -115px;
     stroke-dasharray: 1px 220px;
   }
 
 }
+

@@ -481,7 +481,7 @@ function setPostViews($postID) {
 
 function posts_link_next_class($format){
     $format = str_replace('href=', 'class="navigation_news next" href=', $format);
-    $format = str_replace('</a>', '<img src="http://produpatio.option-design.ca/wp-content/themes/produpatio/img/chevron_right.svg" alt=""></a>', $format);
+    $format = str_replace('</a>', '', $format);
     return $format;
 }
 add_filter('next_post_link', 'posts_link_next_class');

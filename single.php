@@ -14,49 +14,55 @@ get_header(); ?>
 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
+                    $post_categories = get_the_category();
 
-                    ?>
-
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <a href="#" onclick="history.back(-1)" class="bouton_bleu" ><img src="<?php bloginfo('template_url'); ?>/img/arrow_l_bleu.svg" alt=""/>Retour</a>
+                    foreach($post_categories as $cat){} ?>
+                    <div class="flex">
+                        <a href="#" onclick="history.back(-1)" class="bouton_bleu" ><img class="back" width="8" src="<?php bloginfo('template_url'); ?>/img/right-arrow_black.svg" alt=""/>Retour</a>
+                        <?php previous_post_link( '%link', 'Nouvelle précédente', TRUE ); ?>
                         <?php next_post_link( '%link', 'Nouvelle suivante', TRUE ); ?>
+                        <a href="http://www.facebook.com/share.php?u=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank">Partager </a>
+                    </div>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <div class="images" style="background-image: url(''); ">
-                            <img src="<?php echo  wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt=""/>
-                        </div>
+                        <span class="cat <?php echo $cat->slug;?>"> <?php echo $cat->name;?> </span>
+                        <div><?php the_post_thumbnail('large') ;?></div>
+                        <h3 class="contenu_article"> <?php the_title(); ?></h3>
+                        <span class="date"><?php echo get_the_date('j M');?></span
                         <p class="contenu_article"> <?php the_content(); ?></p>
                         <div class="clearfix bas_article"></div>
 
 
                     </article>
-                    <a href="#" onclick="history.back(-1)" class="bouton_bleu" ><img src="<?php bloginfo('template_url'); ?>/img/arrow_l_bleu.svg" alt=""/>Retour</a>
-                    <?php next_post_link( '%link', 'Nouvelle suivante', TRUE ); ?>
-                    <?php setPostViews(get_the_ID());?>
+                    <div class="flex">
+                        <a href="#" onclick="history.back(-1)" class="bouton_bleu" ><img class="back" width="8" src="<?php bloginfo('template_url'); ?>/img/right-arrow_black.svg" alt=""/>Retour</a>
+                        <?php previous_post_link( '%link', 'Nouvelle précédente', TRUE ); ?>
+                        <?php next_post_link( '%link', 'Nouvelle suivante', TRUE ); ?>
+                        <a class="face_share" href="http://www.facebook.com/share.php?u=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank">Partager</a>
+                    </div>
                 <?php endwhile; endif; ?>
 
             </div>
-            <div class="infos">
-                <div>
-                    <div class="sociaux">
-                        <a href="http://www.facebook.com/share.php?u=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img class="facebook" src="<?php bloginfo('template_url'); ?>/img/facebook_bleu.svg" width="25" alt=""/></a>
-                        <a href="https://plus.google.com/share?url=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img  class="google" src="<?php bloginfo('template_url'); ?>/img/google_bleu.svg" width="25" alt=""/></a>
-                        <a href="https://plus.google.com/share?url=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img  class="google" src="<?php bloginfo('template_url'); ?>/img/linkedin_bleu.svg" width="25" alt=""/></a>
-                    </div>
-                    <div class="bouton bleu_fonce"><?php echo get_the_date('j M Y');?></div>
-                    <div class="bouton bleu_clair"><?php echo getPostViews(get_the_ID());?> vue<?php echo (getPostViews(get_the_ID())> 1) ? "s":"";?></div>
-                </div>
-                <div class="vide"></div>
-                <div>
-                    <a href="http://www.facebook.com/share.php?u=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img class="facebook" src="<?php bloginfo('template_url'); ?>/img/facebook_bleu.svg" width="25" alt=""/></a>
-                    <a href="https://plus.google.com/share?url=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img  class="google" src="<?php bloginfo('template_url'); ?>/img/google_bleu.svg" width="25" alt=""/></a>
-                    <a href="https://plus.google.com/share?url=<?php echo "http://" . $_SERVER['HTTP_HOST']  . $_SERVER['REQUEST_URI']; ?>" target="_blank"><img  class="google" src="<?php bloginfo('template_url'); ?>/img/linkedin_bleu.svg" width="25" alt=""/></a>
-                </div>
-            </div>
 
-            <div class="large-4 medium-4 columns cat">
+            <div class="large-4 medium-4 columns select_cat">
 
                 <div>
-                    <h2>Catégories</h2>
+                    <h3>Dernières nouvelles</h3>
+                    <?php
+                    $args = array(
+                        'order' => 'ASC',
+                        'post_type' => 'post',
+                        'posts_per_page' => 2
+                    );
+                    $loop = new WP_Query( $args );
+                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                        <a  href=" <?php the_permalink() ?>"><p> <?php the_title(); ?></p></a>
+                    <?php endwhile; ?>
+
+                </div>
+
+                <div>
+                    <h3>Catégories</h3>
                     <?php
                     $args = array(
                         'orderby' => 'name',
@@ -66,7 +72,7 @@ get_header(); ?>
                     $categories = get_categories($args);
 
                     foreach($categories as $category) {
-                        echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Voir tous les articles dans %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
+                        echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Voir tous les articles dans %s" ), $category->name ) . '" ' . '><p>' . $category->name.'</p></a>';
                     }
                     ?>
                 </div>
@@ -77,12 +83,9 @@ get_header(); ?>
 
         </div>
 
-        <div class="menu_nouvelles">
-
-        </div>
 
     </section>
 
-
+<?php include "bandeau.php" ?>
 
 <?php get_footer(); ?>

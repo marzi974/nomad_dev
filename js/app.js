@@ -22,6 +22,14 @@ jQuery(document).ready(function($){
 
 
 
+    $("#hamburger").click(function() {
+        $("#hamburger").toggleClass("cross");
+        $(this).closest(".container").toggleClass("cross");
+    });
+
+
+
+
     var $container = $('#expert');
 
     // create a clone that will be used for measuring container width
@@ -43,6 +51,35 @@ jQuery(document).ready(function($){
 
     });
 
+
+
+    $( 'input:file' ).each( function()
+    {
+        var $input	 = $( this ),
+            $label	 = $input.closest('.fileUpload').find('label'),
+            labelVal = $label.html();;
+        $input.on( 'change', function( e )
+        {
+            var fileName = '';
+
+            if( this.files && this.files.length > 1 )
+                fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+            else if( e.target.value )
+                fileName = e.target.value.split( '\\' ).pop();
+            if( fileName )
+                $label.html( fileName );
+            else
+                $label.html( labelVal );
+
+        });
+
+        // Firefox bug fix
+        $input
+            .on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+            .on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+    });
+
 });
+
 
 

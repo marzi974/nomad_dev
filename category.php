@@ -1,8 +1,12 @@
 <?php
-/** Template Name: actualites
+/** Template Name: blog
  */
 
-get_header(); ?>
+get_header();
+$categories = get_the_category();
+foreach( $categories as $category ) {
+}
+?>
 
 
 
@@ -11,11 +15,14 @@ get_header(); ?>
     <section id="actu" class="container">
 
 
-        <div class="flex">
+    <div class="flex">
+
 
             <?php
             global $post;
-            $args = array( 'post_type' => 'post', 'posts_per_page' => -1 );
+
+
+            $args = array( 'post_type' => 'post','category_name' => $category->slug, 'posts_per_page' => -1 );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
 
@@ -24,7 +31,8 @@ get_header(); ?>
 
                 foreach($post_categories as $cat){} ?>
 
-                                  <div class="news">
+
+                <div class="news">
                     <span class="cat <?php echo $cat->slug;?>"></span>
                     <?php the_post_thumbnail('large') ;?>
                     <div>
@@ -36,12 +44,13 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
+
+
         </div>
 
     </section>
 
 <?php include "bandeau.php" ?>
-
 
 <?php get_footer();
 
